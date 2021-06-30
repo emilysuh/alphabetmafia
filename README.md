@@ -1,6 +1,6 @@
 # alphabetmafia
 1. What social problem is being addressed?
-    1. Housing for queer UCLA students
+    1. Impact of gender and sexuality on housing for queer UCLA students
 2. Who is being empowered by your mapplication?
     1. Queer UCLA students and community members in Westwood Village
 3. What technical and ethical problems could there be in developing this tool?
