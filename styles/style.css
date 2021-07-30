@@ -1,0 +1,24 @@
+body{
+    background-image: linear-gradient( 100deg, #9185bb69 10%, #8bb8586b 50%, #1927e66b 100%);
+    display:grid;
+    grid-template-columns: 1fr 1fr; /* this creates an even two column layout*/
+    grid-template-areas: "mappanel sidepanel" /* this creates one row with map panel on the left and sidepanel on the right */
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+    background: hsla(122, 41%, 35%, 0.42);
+    color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+  }
+#mapArea{
+    height:90vh;
+    grid-area: mappanel;
+    border: 8px solid white
+} 
+
+#survey{
+    grid-area: sidepanel;
+} 
