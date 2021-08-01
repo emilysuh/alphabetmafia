@@ -9,7 +9,7 @@ body{
 .header {
     padding: 20px;
     text-align: center;
-    background: hsla(122, 41%, 35%, 0.42);
+    background: hsla(122, 41%, 34%, 0.42);
     color: white;
     font-size: 18px;
     font-family: sans-serif;
@@ -29,7 +29,7 @@ button {
   }
   
 a {
-    color: rgb(29, 29, 61) ;
+    color: rgb(29, 29, 61);
 }
 #mapArea{
     height:90vh;
