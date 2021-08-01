@@ -11,13 +11,10 @@ let clusterOptions = {
     showCoverageOnHover: false
 }
 
-
 const myMap = L.map('mapArea').setView([34.0709, -118.444], 11);
 
 let answeredYes = L.markerClusterGroup(clusterOptions);
 let answeredNo = L.markerClusterGroup(clusterOptions);
-
-
 
 
 const boundaryLayer = "data/westwoodnotwestwood.geojson"
@@ -65,7 +62,7 @@ function getStyles(data){
         "color": "#ff7800",
         "weight": 1,
         "opacity": .0,
-        "stroke": .5
+        "stroke": .25
     };
     if (data.properties.values.length > 0){
         myStyle.opacity = 0
@@ -246,6 +243,7 @@ function addMarker(data){
 }
 
 
+
 // // function to process the data and check if it matches the stateName passed in
 // function areaCheck(data,areaName) {
 //     // only return data if it matches the state name
@@ -309,10 +307,11 @@ function highlightFeature(e) {
     console.log(divToUpdate)
     layer.setStyle({
         weight: 5,
-        color: '#666',
-        fillColor: 'red',
+        color: 'white',
+        fillColor: 'white',
         dashArray: '',
-        fillOpacity: 0.1
+        fillOpacity: 0.0,
+        opacity: 0.0
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -326,20 +325,21 @@ function resetHighlight(e) {
     boundaryGeom.resetStyle(e.target);
 }
 
-function returnStories(){
-    let story = addMeaningfulData(story)
-    
-    return story
+function returnStories(thisStory,target){
+    let thestory = addMeaningfulData(thisStory)
+    console.log(thestory)
+    target.innerHTML += thestory
+    return thestory
 }
 
 // function to add the story with the target div
 function addStory(story,target){
     console.log(story)
-    
+    target.innerHTML = ""
     // console.log(thisStory)
-    target.innerHTML = story.values.forEach(returnStories)
+    story.forEach(thestory => returnStories(thestory,target))
 
-    target.innerHTML = `<div class="card">${thisStory}</div>`
+    // target.innerHTML = `<div class="card">${thisStory}</div>`
     // target.innerHTML += `<div class="card">
     //                         <h3>Identify as queer or trans: ${story.queerortrans}</h3>
     //                         <p><strong>How much rent do you pay per month?: </strong>${story.rent}</p>
@@ -354,7 +354,7 @@ function updateContentsPanel(target,boundaryValues){
     // console.log(boundaryValues)
     let dataInsideBoundary = boundaryValues.values
 
-    dataInsideBoundary.forEach(thisData => addStory(thisData,target))
-    addStory(dataInsideBoundary)
+    // dataInsideBoundary.forEach(thisData => addStory(thisData,target))
+    addStory(dataInsideBoundary,target)
 
 }
