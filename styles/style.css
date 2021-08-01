@@ -2,7 +2,8 @@ body{
     background-image: linear-gradient( 100deg, #9185bb69 10%, #8bb8586b 50%, #1927e66b 100%);
     display:grid;
     grid-template-columns: 1fr 1fr; /* this creates an even two column layout*/
-    grid-template-areas: "mappanel sidepanel" /* this creates one row with map panel on the left and sidepanel on the right */
+    grid-template-rows: .2fr ,8fr;  /* two row layout with map and content*/
+    grid-template-areas: "head head" "mappanel sidepanel" /* this creates one row with map panel on the left and sidepanel on the right */
 }
 
 .header {
@@ -12,13 +13,30 @@ body{
     color: white;
     font-size: 18px;
     font-family: sans-serif;
+    grid-area: head;
   }
+
+button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+a {
+    color: rgb(29, 29, 61) ;
+}
 #mapArea{
     height:90vh;
     grid-area: mappanel;
     border: 8px solid white
 } 
 
-#survey{
+#contents{
     grid-area: sidepanel;
 } 

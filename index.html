@@ -10,18 +10,28 @@
 
         <!-- Leaflet's JavaScript-->
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <!-- Cluster Marker's CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+        <!-- Cluster Marker's JavaScript -->
+        <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+        <!-- Adding the TurfJs library  -->
+        <script src='https://unpkg.com/@turf/turf@6.3.0/turf.min.js'></script>
     </head>
     
     <body>
-        <header>
         <div class="header">
                 <h1>Mapping UCLA Queer and Trans Students' Housing Experiences</h1>
-              </div> 
+                <button> 
+                    <a href="https://forms.gle/96gzLVSUW4wVGi1e7">Take the survey!</a> 
+                </button>
+        </div>
+         
+
+        <div id="contents"></div>
         <div id="mapArea"></div>
         <div id="survey">
         <!-- this is the iframe for our survey -->
-        </header>  
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeJspPpjm4TsSGzRdPc_Iw1Glvh5pb5KbWVlj0qdFidD8mDdQ/viewform?embedded=true" width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
         </div>
         <script src="js/init.js"></script>
     </body>
